@@ -1,16 +1,21 @@
-# React + Vite
+// Redux - Alternative of prop drilling (prop drilling was a headache)
+// Centralized store
+// Terms - 
+// Action {event/object}(It's a [event] or [event+additional info], additional info like ex.- payload, object or data)
+// Store {hold states} (It contains state,the data you want to manupulate, it also contains reducers)
+// Reducer {functions}(This contains the entire logic for updating or changing a data)
+// Slice {features}(The logics of maintaining states for every features is in 'Slice', this contains initial state and reducer function)
+// State {data}
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+// Whole path - 
+// UI trigger -> Action dispatch -> store -> reducer -> state update in store -> UI update 
+// ex- button click -> handlefunc() -> store -> increment() -> num+1 in store -> num+1 in UI
 
-Currently, two official plugins are available:
+// Steps - 
+// 1. create store (in 'redux' folder)
+// 2. wrap the App.js with Provider
+// 3. create slice (in 'features' folder)
+// 4. create Reducers in slice 
+// 5. register the created reducers in the store
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+// useSelector, dispatch
